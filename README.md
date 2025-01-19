@@ -36,10 +36,6 @@ The **News Aggregator** platform combines multiple news APIs into a unified expe
 3. **Encrypt/Decrypt Environment File**
     - Contact me to obtain the encryption key.
 
-    - Encrypt `.env` file:
-      ```bash
-      ./vendor/bin/sail artisan env:encrypt --key=<your-encryption-key> --force
-      ```
     - Decrypt `.env` file:
       ```bash
       ./vendor/bin/sail artisan env:decrypt --key=<your-encryption-key> --filename=.env.decrypted --force
