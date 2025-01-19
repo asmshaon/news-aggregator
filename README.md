@@ -58,10 +58,15 @@ The **News Aggregator** platform combines multiple news APIs into a unified expe
 
 6. **Run Migrations**
    ```bash
+   ./vendor/bin/sail composer install
+   ```
+
+7**Run Migrations**
+   ```bash
    ./vendor/bin/sail artisan migrate
    ```
 
-7. **Scrape News Data**
+8**Scrape News Data**
     - Import all sources:
       ```bash
       ./vendor/bin/sail artisan news-aggregator:scrape-all
@@ -73,7 +78,7 @@ The **News Aggregator** platform combines multiple news APIs into a unified expe
       ./vendor/bin/sail artisan news-aggregator:ny-times-api:scrape
       ```
 
-8. **Optional: Schedule Tasks**
+9**Optional: Schedule Tasks**
    ```bash
    ./vendor/bin/sail artisan schedule:work
    ```
