@@ -1,4 +1,3 @@
-```markdown
 # News Aggregator API Platform
 
 The **News Aggregator** platform combines multiple news APIs into a unified experience, allowing users to browse, search, and personalize their news feed. This repository provides a streamlined setup for developers to get started quickly.
