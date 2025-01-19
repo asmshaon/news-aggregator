@@ -35,7 +35,6 @@ The **News Aggregator** platform combines multiple news APIs into a unified expe
 
 3. **Encrypt/Decrypt Environment File**
     - Contact me to obtain the encryption key.
-
     - Decrypt `.env` file:
       ```bash
       ./vendor/bin/sail artisan env:decrypt --key=<your-encryption-key> --filename=.env.decrypted --force
@@ -57,12 +56,12 @@ The **News Aggregator** platform combines multiple news APIs into a unified expe
    ./vendor/bin/sail composer install
    ```
 
-7**Run Migrations**
+7. **Run Migrations**
    ```bash
    ./vendor/bin/sail artisan migrate
    ```
 
-8**Scrape News Data**
+8. **Scrape News Data**
     - Import all sources:
       ```bash
       ./vendor/bin/sail artisan news-aggregator:scrape-all
@@ -74,7 +73,7 @@ The **News Aggregator** platform combines multiple news APIs into a unified expe
       ./vendor/bin/sail artisan news-aggregator:ny-times-api:scrape
       ```
 
-9**Optional: Schedule Tasks**
+9. **Optional: Schedule Tasks**
    ```bash
    ./vendor/bin/sail artisan schedule:work
    ```
@@ -94,6 +93,15 @@ The **News Aggregator** platform combines multiple news APIs into a unified expe
 - Use the `schedule:work` command for periodic updates of the news database.
 
 ---
+
+## API Integrated 
+
+- NEWS API ORG
+- Guardian API
+- New York Times API
+
+---
+
 
 Happy Developing! 🎉
 ```
