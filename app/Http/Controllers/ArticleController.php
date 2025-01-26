@@ -31,18 +31,18 @@ class ArticleController extends Controller
         }
 
         // Search by category
-        if ($request->has('category_id')) {
-            $query->where('category_id', $request->integer('category_id'));
+        if ($request->has('categories')) {
+            $query->whereIn('category_id', explode(',', $request->get('categories')));
         }
 
         // Search by source
-        if ($request->has('source_id')) {
-            $query->where('source_id', $request->integer('source_id'));
+        if ($request->has('sources')) {
+            $query->whereIn('source_id', explode(',', $request->get('sources')));
         }
 
         // Search by author
-        if ($request->has('author_id')) {
-            $query->where('source_id', $request->integer('author_id'));
+        if ($request->has('authors')) {
+            $query->whereIn('author_id', explode(',', $request->get('authors')));
         }
 
         $query->orderBy('published_at', 'DESC');
@@ -57,7 +57,7 @@ class ArticleController extends Controller
             'category_id',
             'url',
             'image'
-        ])->paginate($request->integer('per_page', 10));
+        ])->cursorPaginate($request->integer('per_page', 10));
 
         return response()->json($articles);
     }

@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SourceController;
 use App\Http\Controllers\UserFeedController;
 use App\Http\Controllers\UserPreferenceController;
 use Illuminate\Http\JsonResponse;
@@ -35,6 +38,9 @@ Route::group(['middleware' => 'api', 'prefix' => 'auth'], function () {
 });
 
 Route::apiResource('articles', ArticleController::class)->only('index');
+Route::apiResource('categories', CategoryController::class)->only('index');
+Route::apiResource('authors', AuthorController::class)->only('index');
+Route::apiResource('sources', SourceController::class)->only('index');
 
 Route::middleware(['auth:api'])->group(function () {
     Route::apiResource('user-preferences', UserPreferenceController::class);

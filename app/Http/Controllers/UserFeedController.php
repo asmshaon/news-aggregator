@@ -40,7 +40,7 @@ class UserFeedController extends Controller
             'category_id',
             'url',
             'image'
-        ])->paginate(10);
+        ])->cursorPaginate(10);
 
         return response()->json($articles);
     }
