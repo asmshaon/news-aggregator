@@ -33,23 +33,25 @@ The **News Aggregator** platform combines multiple news APIs into a unified expe
    cd news-aggregator
    ```
 
-3. **Encrypt/Decrypt Environment File**
+3. **Start the Application**
+   ```bash
+   ./vendor/bin/sail up
+   OR for 1st run you may need this with --build flag
+   ./vendor/bin/sail up --build
+   ```
+   
+4. **Encrypt/Decrypt Environment File**
     - Contact me to obtain the encryption key.
     - Decrypt `.env` file:
       ```bash
       ./vendor/bin/sail artisan env:decrypt --key=<your-encryption-key> --filename=.env.decrypted --force
       ```
 
-4. **Prepare the `.env` File**
+5. **Prepare the `.env` File**
     - Copy the decrypted environment file:
       ```bash
       cp env.decrypted .env
       ```
-
-5. **Start the Application**
-   ```bash
-   ./vendor/bin/sail up
-   ```
 
 6. **Run Migrations**
    ```bash
@@ -77,6 +79,9 @@ The **News Aggregator** platform combines multiple news APIs into a unified expe
    ```bash
    ./vendor/bin/sail artisan schedule:work
    ```
+   
+10. [Download the Frontend APP](https://github.com/asmshaon/news-aggregator-front) and [Check out there](http://localhost:3000/)
+
 
 ---
 
@@ -102,6 +107,11 @@ The **News Aggregator** platform combines multiple news APIs into a unified expe
 
 ---
 
+##  Troubleshoot
+Please see this documentation if you are unable to run this app, this may vary, I am using Linux
+https://laravel.com/docs/11.x/sail#rebuilding-sail-images
+
+*** If you get any ports conflicts please kill your process or use different port on docker compose file ***
 
 Happy Developing! 🎉
 ```
